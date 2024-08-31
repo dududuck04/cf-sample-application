@@ -1,0 +1,14 @@
+version=0.1
+[default.global.parameters]
+stack_name = "common-stack"
+
+[default.deploy.parameters]
+stack_name = "stack-lmd-s3-cloudfront-resizing-viewer-request"
+s3_bucket = "duck's bucket"
+s3_prefix = "template/lmd-s3-cloudfront-resizing-viewer-request"
+region = "us-east-1"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
+
+[default.build.parameters]
+no_beta_features = true

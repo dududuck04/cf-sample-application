@@ -1,0 +1,16 @@
+{
+  "name": "s3-cloudfront-resizing",
+  "version": "1.0.0",
+  "description": "A lambda function for image resizing",
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.378.0",
+    "perf_hooks": "^0.0.1",
+    "querystring": "^0.2.1",
+    "sharp": "^0.32.4"
+  },
+  "scripts": {
+    "build": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

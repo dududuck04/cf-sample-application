@@ -1,0 +1,24 @@
+version: 0.2
+
+env:
+  shell: bash
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+  build:
+    commands:
+      - echo Build started on `date`
+      - ls -alh ./
+      - cd functions/lmd-sample-function/
+      - npm install
+      - cd ../../
+      - sam build
+      - sam package --s3-bucket duck's bucket --s3-prefix package/lmd-s3-cloudfront-resizing-origin-request --output-template-file packaged.yaml
+      - sam deploy --template-file packaged.yaml --no-progressbar --no-fail-on-empty-changeset
+
+artifacts:
+  files:
+    - packaged.yaml
